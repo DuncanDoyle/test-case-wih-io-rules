@@ -1,2 +1,15 @@
 package com.myspace.test_case_wih_io_rules;
 
+import org.jbpm.casemgmt.api.CaseService;
+import org.jbpm.services.api.service.ServiceRegistry;
+import org.kie.api.runtime.process.CaseData;
+import org.jbpm.casemgmt.api.model.instance.CaseFileInstance;
+
+rule "Test String"
+when
+    $caseData: CaseFileInstance()
+    String() from $caseData.getData("test")
+then
+    System.out.println("Rule fired!!! Found our test String in Case Data.");
+
+end 
