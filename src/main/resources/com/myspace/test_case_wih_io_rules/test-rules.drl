@@ -11,5 +11,12 @@ when
     String() from $caseData.getData("test")
 then
     System.out.println("Rule fired!!! Found our test String in Case Data.");
-
 end 
+
+
+rule "CaseData"
+when
+    $caseData: CaseFileInstance()
+then
+    System.out.println("Found case file instance!!!");
+end
